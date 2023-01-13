@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="FoodTest" time="0.047" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="FoodTest" time="0.026" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="18"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\_[Folder]\Professional\Workspace\price-comparison\target\test-classes;C:\_[Folder]\Professional\Workspace\price-comparison\target\classes;C:\Users\quba2\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.0\junit-jupiter-engine-5.4.0.jar;C:\Users\quba2\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\quba2\.m2\repository\org\junit\platform\junit-platform-engine\1.4.0\junit-platform-engine-1.4.0.jar;C:\Users\quba2\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\quba2\.m2\repository\org\junit\platform\junit-platform-commons\1.4.0\junit-platform-commons-1.4.0.jar;C:\Users\quba2\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.0\junit-jupiter-api-5.4.0.jar;"/>
+    <property name="java.class.path" value="C:\_[Folder]\Professional\Workspace\food-price-comparison\target\test-classes;C:\_[Folder]\Professional\Workspace\food-price-comparison\target\classes;C:\Users\quba2\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.0\junit-jupiter-engine-5.4.0.jar;C:\Users\quba2\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\quba2\.m2\repository\org\junit\platform\junit-platform-engine\1.4.0\junit-platform-engine-1.4.0.jar;C:\Users\quba2\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\quba2\.m2\repository\org\junit\platform\junit-platform-commons\1.4.0\junit-platform-commons-1.4.0.jar;C:\Users\quba2\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.0\junit-jupiter-api-5.4.0.jar;"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Users\quba2\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_18.0.1.v20220515-1614\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\quba2\AppData\Local\Temp\surefire8838062982641241946\surefirebooter4611754912893550614.jar C:\Users\quba2\AppData\Local\Temp\surefire8838062982641241946 2023-01-12T16-14-06_052-jvmRun1 surefire5733529679386347794tmp surefire_015481207970481715606tmp"/>
+    <property name="sun.java.command" value="C:\Users\quba2\AppData\Local\Temp\surefire5919295262822621126\surefirebooter5492011870102070318.jar C:\Users\quba2\AppData\Local\Temp\surefire5919295262822621126 2023-01-13T04-50-57_709-jvmRun1 surefire2010706062614239776tmp surefire_07755768120846030882tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\_[Folder]\Professional\Workspace\price-comparison\target\test-classes;C:\_[Folder]\Professional\Workspace\price-comparison\target\classes;C:\Users\quba2\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.0\junit-jupiter-engine-5.4.0.jar;C:\Users\quba2\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\quba2\.m2\repository\org\junit\platform\junit-platform-engine\1.4.0\junit-platform-engine-1.4.0.jar;C:\Users\quba2\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\quba2\.m2\repository\org\junit\platform\junit-platform-commons\1.4.0\junit-platform-commons-1.4.0.jar;C:\Users\quba2\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.0\junit-jupiter-api-5.4.0.jar;"/>
+    <property name="surefire.test.class.path" value="C:\_[Folder]\Professional\Workspace\food-price-comparison\target\test-classes;C:\_[Folder]\Professional\Workspace\food-price-comparison\target\classes;C:\Users\quba2\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.0\junit-jupiter-engine-5.4.0.jar;C:\Users\quba2\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\quba2\.m2\repository\org\junit\platform\junit-platform-engine\1.4.0\junit-platform-engine-1.4.0.jar;C:\Users\quba2\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\quba2\.m2\repository\org\junit\platform\junit-platform-commons\1.4.0\junit-platform-commons-1.4.0.jar;C:\Users\quba2\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.0\junit-jupiter-api-5.4.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\quba2"/>
     <property name="user.language" value="en"/>
@@ -25,12 +25,12 @@
     <property name="java.version.date" value="2022-04-19"/>
     <property name="java.home" value="C:\Users\quba2\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_18.0.1.v20220515-1614\jre"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\_[Folder]\Professional\Workspace\price-comparison"/>
+    <property name="basedir" value="C:\_[Folder]\Professional\Workspace\food-price-comparison"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\quba2\AppData\Local\Temp\surefire8838062982641241946\surefirebooter4611754912893550614.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\quba2\AppData\Local\Temp\surefire5919295262822621126\surefirebooter5492011870102070318.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="18.0.1+10"/>
@@ -45,7 +45,7 @@
     <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
     <property name="java.io.tmpdir" value="C:\Users\quba2\AppData\Local\Temp\"/>
     <property name="java.version" value="18.0.1"/>
-    <property name="user.dir" value="C:\_[Folder]\Professional\Workspace\price-comparison"/>
+    <property name="user.dir" value="C:\_[Folder]\Professional\Workspace\food-price-comparison"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
@@ -57,5 +57,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="62.0"/>
   </properties>
-  <testcase name="test" classname="FoodTest" time="0.033"/>
+  <testcase name="testIfExactPriceWhen0Mass" classname="FoodTest" time="0.009"/>
+  <testcase name="testIfExactPriceWithQuantity" classname="FoodTest" time="0.001"/>
+  <testcase name="testIfExactPriceWhenNotApplicable" classname="FoodTest" time="0.002"/>
+  <testcase name="testIfExactPriceWhenQuantity0" classname="FoodTest" time="0.001"/>
+  <testcase name="testIfExactPriceIsDisplayedProperly" classname="FoodTest" time="0.007"/>
+  <testcase name="testIfPriceWhen0" classname="FoodTest" time="0.001"/>
+  <testcase name="testIfPriceIsDisplayedProperly" classname="FoodTest" time="0.001"/>
 </testsuite>

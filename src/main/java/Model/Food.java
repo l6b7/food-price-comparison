@@ -13,6 +13,7 @@ public class Food implements IFood{
 	private String brand;
 	private int price;
 	private IExactPrice amount;
+	
 
 	public Food(String name, String brand, int price, IExactPrice amount) {
 		this.name = name;

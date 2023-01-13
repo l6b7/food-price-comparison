@@ -6,28 +6,11 @@ import Model.ExactPriceFromMass;
 import Model.ExactPriceFromQuantity;
 import Model.ExactPriceNotApplicable;
 import Model.Food;
-import Model.IExactPrice;
 import Model.IFood;
-import View.ConsoleTable;
+
 
 class FoodTest {
 
-	//Food f = new Food("bread", "tesco", 25, new ExactPriceFromMass(123,"g"));
-	
-	public static  ConsoleTable SampleTable() {
-		
-	String[] c =	 {"First","Second","Third"};
-	
-	String[][] r = {{"[0][0]","[0][1]","[0][2]"},
-			
-					{"[1][0]","[1][1]","[1][2]"},
-					
-					{"[2][0]","[2][1]","[2][2]"},
-					
-					{"[3][0]","[3][1]","[3][2]"}};
-	
-	return new ConsoleTable(c,r);
-	}
 	
 	@Test
 	void testIfPriceIsDisplayedProperly() {

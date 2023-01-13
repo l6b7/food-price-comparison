@@ -12,7 +12,7 @@ public class ExactPriceFromQuantity implements IExactPrice {
 	@Override
 	public String getExactPrice(int price) {
 		if(quantity == 0) {
-			return "0.00";
+			return "0.00 per unit";
 		}
 		return IFood.formatPrice(price / quantity) + " per unit";
 	}

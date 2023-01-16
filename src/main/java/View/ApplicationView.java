@@ -3,7 +3,6 @@ package View;
 import Controller.Controller;
 import Controller.IController;
 import Model.DummyDataStoring;
-import Model.IDataStoring;
 
 public class ApplicationView {
 
@@ -28,26 +27,19 @@ public class ApplicationView {
 
 		boolean isRunning = false;
 		printMenu();
-		
-		printTable();
-		
-		int choice = 1;
+		int choice = 1; // set to ;
+
 		
 		while(isRunning){
-			System.out.println("here get user input");
-			
+			//user choice
 			switch(choice) {
-			case 0 -> isRunning = false;
-		    case 1 -> printTable();
-		    case 2 -> addProduct();
-		    case 3 -> removeProduct();
-		    case 4 -> removeAll();
-		    
+				case 0 -> isRunning = false;
+			    case 1 -> printTable();
+			    case 2 -> addProduct();
+			    case 3 -> removeProduct();
+			    case 4 -> removeAll();
 			};
-			
-			
 		}
-		
 		
 	}
 
@@ -65,7 +57,6 @@ public class ApplicationView {
 		
 		printAddProductMenu();
 
-		
 		
 		int userInput = 0;
 		

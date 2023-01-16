@@ -1,5 +1,8 @@
 package Controller;
 
+import java.util.Arrays;
+import java.util.Iterator;
+
 import Model.FoodList;
 import Model.IDataStoring;
 import Model.IFoodList;
@@ -16,7 +19,16 @@ public class Controller implements IController{
 	
 	@Override
 	public String[] getTableCollumns() {
-		return foodList.getCollumnNames();
+		String[] collumnTitles = foodList.getCollumnNames();
+		String[] collumnTitlesWithID = new String[collumnTitles.length+1];
+		
+		collumnTitlesWithID[0] = "#";
+		
+		for (int i = 0; i < collumnTitles.length; i++) {
+			collumnTitlesWithID[i+1] = collumnTitles[i];
+		}
+		
+	    return collumnTitlesWithID;
 	}
 
 	@Override
@@ -26,15 +38,16 @@ public class Controller implements IController{
 		}
 		
 		int y = foodList.getFoodList().size();
-		int x = foodList.getCollumnNames().length;
+		int x = getTableCollumns().length;
 		
 		String[][] tableContent = new String[y][x];
 		
 		for (int i = 0; i < y; i++) {
-			tableContent[i][0] = foodList.getFoodList().get(i).getName();
-			tableContent[i][1] = foodList.getFoodList().get(i).getBrand();
-			tableContent[i][2] = foodList.getFoodList().get(i).getPrice();
-			tableContent[i][3] = foodList.getFoodList().get(i).getExactPrice();
+			tableContent[i][0] = Integer.toString(i+1);
+			tableContent[i][1] = foodList.getFoodList().get(i).getName();
+			tableContent[i][2] = foodList.getFoodList().get(i).getBrand();
+			tableContent[i][3] = foodList.getFoodList().get(i).getPrice();
+			tableContent[i][4] = foodList.getFoodList().get(i).getExactPrice();
 		}
 		
 		return tableContent;
@@ -63,9 +76,14 @@ public class Controller implements IController{
 		return foodList.removeFood(index);
 	}
 
+
+	
 	@Override
 	public void removeAll() {
 		foodList.removeAll();
 		
 	}
+
+
+
 }

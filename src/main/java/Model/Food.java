@@ -2,13 +2,6 @@ package Model;
 
 public class Food implements IFood{
 
-	public static void main(String[] args) {
-		Food f = new Food("bread", "tesco", 25, new ExactPriceFromMass(123,"g"));
-		System.out.println(f);
-
-	}
-
-
 	private String name;
 	private String brand;
 	private int price;

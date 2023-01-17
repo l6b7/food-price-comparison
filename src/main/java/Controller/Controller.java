@@ -69,8 +69,8 @@ public class Controller implements IController{
 	}
 
 	@Override
-	public boolean removeFood(int index) {
-		return foodList.removeFood(index);
+	public void removeFood(int index) {
+		foodList.removeFood(index);
 	}
 
 
@@ -80,7 +80,18 @@ public class Controller implements IController{
 		foodList.removeAll();
 		
 	}
+	
+	@Override
+	public String getFood(int index) {
+		return foodList.getFood(index);
+	}
 
+
+
+	@Override
+	public boolean checkIfFoodExists(int index) {
+		return foodList.checkIfFoodExists(index);
+	}
 
 
 }

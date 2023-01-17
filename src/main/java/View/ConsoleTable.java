@@ -2,9 +2,7 @@ package View;
 
 import java.util.Formatter;
 
-import Controller.Controller;
 import Controller.IController;
-import Model.DummyDataStoring;
 
 public class ConsoleTable implements ITable{
 	

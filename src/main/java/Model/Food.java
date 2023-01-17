@@ -33,7 +33,7 @@ public class Food implements IFood{
 
 	@Override
 	public String toString() {
-	return "[" + getName() + "] ["+ getBrand() + "] [" + getPrice() + "] [" + getExactPrice()+"]";
+	return getName() + " "+ getBrand() + " " + getPrice()+"...";
 	}
 
 }

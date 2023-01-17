@@ -7,6 +7,19 @@ import java.util.stream.Collectors;
 public class FoodList implements IFoodList{
 	
 	
+	public static void main(String[] args) {
+		FoodList f = new FoodList(new DummyDataStoring());
+		f.addFood("name", "name", 2312);
+		f.addFood("name", "name", 2312);
+		System.out.println(f.checkIfFoodExists(0));
+		System.out.println(f.getFood(0).toString());
+		if(f.checkIfFoodExists(1)) {
+			System.out.println(f.checkIfFoodExists(1));
+			System.out.println(f.getFood(1).toString());			
+		}
+		System.out.println(f.checkIfFoodExists(2));
+	}
+	
 	private final String[] collumnNames = {"Name","Brand","Price","Exact Price"};
 	
 	private ArrayList<Food> foodList;
@@ -50,15 +63,14 @@ public class FoodList implements IFoodList{
 	}
 
 	@Override
-	public boolean removeFood(int index) {
-		if(index > foodList.size()-1) {
-			return false;
+	public void removeFood(int index) {
+		foodList.remove(index);
+		if(!checkIfFoodExists(index)) {
+			System.out.println("index doesn't exist");
+			return;
 		}
-		else {
-			foodList.remove(index);
-			dataStoring.saveData(foodList);
-			return true;
-		}
+		foodList.remove(index);
+		dataStoring.saveData(foodList);
 	}
 
 	@Override
@@ -66,6 +78,21 @@ public class FoodList implements IFoodList{
 		foodList = new ArrayList<>();
 		dataStoring.saveData(foodList);
 	}
+	
+	@Override
+	public boolean checkIfFoodExists(int index) {
+		return index >= 0 && index < foodList.size();
+	}
+	
+	@Override
+	public String getFood(int index) {
+		if(!checkIfFoodExists(index)) {
+			System.out.println("index doesn't exist");
+			return "";
+		}
+		return foodList.get(index).toString();
+	}
+	
 	
 	public ArrayList<Food> sortList() {
 		return foodList.stream()
@@ -77,4 +104,5 @@ public class FoodList implements IFoodList{
 		foodList = sortList();
 		dataStoring.saveData(foodList);
 	}
+	
 }

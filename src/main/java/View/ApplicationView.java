@@ -10,7 +10,7 @@ public class ApplicationView {
 
 	private IController controller;
 	private ITable table;
-	
+	private Scanner scanner;
 	
 	private final String MENU = new String(""
 					+ "Press [1] to view products" +"\n"
@@ -39,11 +39,13 @@ public class ApplicationView {
 	private final String ADD_PRODUCT_CONFIRMATION_MESSAGE = "Product has been added";
 	
 	private final String REMOVE_ALL_PRODUCTS_CONFIRMATION_MESSAGE = "All products have been removed";
+	private final String REMOVE_ALL_PRODUCTS_MESSAGE = "Are you sure you want to remove all products";
 
 	private final String REMOVE_PRODUCT_MENU = ""
 							+"Enter product # number to remove it" + "\n"
 							+"Press [0] to go back";
 	
+	private final String REMOVE_PRODUCT_MESSAGE = "Are you sure you want to remove this product";
 	private final String REMOVE_PRODUCT_ERROR_MESSAGE = "Product wasn't found";
 	private final String REMOVE_PRODUCT_CONFIRMATION_MESSAGE = "Product has been removed";
 	
@@ -62,7 +64,7 @@ public class ApplicationView {
 					+ "1 -> grams" +"\n"
 					+ "2 -> milliliters";
 	
-	private final String GET_PRODUCT_QUANTITY_MESSAGE = "Enter quantity of the product";
+	private final String GET_PRODUCT_QUANTITY_MESSAGE = "Enter quantity of the product:";
 	
 	
 	
@@ -70,15 +72,17 @@ public class ApplicationView {
 		
 		ApplicationView view = new ApplicationView(new Controller(new DummyDataStoring()));
 		
-		view.startApplication();	
+		view.startApplication();
 	}
 	
 	public ApplicationView(IController controller) {
 		this.controller = controller;
 		table = new ConsoleTable(controller);
+		scanner = new Scanner(System.in);
 	}
 
-		private void startApplication(){
+	
+	private void startApplication(){
 		boolean isRunning = true;
 		boolean firstRun = true;
 		int userInput;
@@ -103,22 +107,22 @@ public class ApplicationView {
 			
 			firstRun = false;
 		}
+		scanner.close();
 	}
 
 
 	
 	private void addProduct() {
-		
 		printInConsole(ADD_PRODUCT_MENU);
 
 		int productType;
 		int minIntInput = 0;
 		int maxIntInput = 3;
 		
-		productType = getIntInput(minIntInput,maxIntInput,INCORRECT_INPUT_ERROR_MESSAGE);		
-		
+		productType = getIntInput(minIntInput,maxIntInput,INCORRECT_INPUT_ERROR_MESSAGE);	
 		
 		clearConsole();
+		
 		switch(productType) {
 		    case 1 -> addBasicProduct();
 		    case 2 -> addProductWithMass();
@@ -136,22 +140,26 @@ public class ApplicationView {
 		
 		controller.addFood(name, brand, price);
 		
+		clearConsole();
 		printInConsole(ADD_PRODUCT_CONFIRMATION_MESSAGE);
 		goBackToMenu();
 	}
 	
 	
 	private String getProductName() {
+		clearConsole();
 		printInConsole(GET_PRODUCT_NAME_MESSAGE);
 		return getStringInput();
 	}
 
 	private String getProductBrand() {
+		clearConsole();
 		printInConsole(GET_PRODUCT_BRAND_MESSAGE);
 		return getStringInput();
 	}
 
 	private int getProductPrice() {
+		clearConsole();
 		printInConsole(GET_PRODUCT_PRICE_MESSAGE);
 
 		int minInput = 1;
@@ -169,6 +177,7 @@ public class ApplicationView {
 		String measurementUnit = getMeasurementUnit();
 			
 		controller.addFoodWithMass(name, brand, price, mass, measurementUnit);
+		clearConsole();
 		printInConsole(ADD_PRODUCT_CONFIRMATION_MESSAGE);
 		goBackToMenu();
 	}
@@ -176,16 +185,17 @@ public class ApplicationView {
 
 	private int getProductMass() {
 		printInConsole(GET_PRODUCT_MASS_MESSAGE);
+		clearConsole();
 		
 		int minInput = 1;
 		int maxInput = Integer.MAX_VALUE;
-		
 		
 		int mass = getIntInput(minInput,maxInput, INCORRECT_VALUE_ERROR_MESSAGE);
 		return mass;
 	}
 
 	private String getMeasurementUnit() {
+		clearConsole();
 		printInConsole(GET_PRODUCT_MEASUREMENT_UNIT_MESSAGE);
 		
 		int minInput = 1;
@@ -206,12 +216,14 @@ public class ApplicationView {
 		int quantity = getProductQuantity();
 			
 		controller.addFoodWithQuantity(name, brand, price, quantity);
+		clearConsole();
 		printInConsole(ADD_PRODUCT_CONFIRMATION_MESSAGE);
 		goBackToMenu();
 	}
 	
 	
 	private int getProductQuantity() {
+		clearConsole();
 		printInConsole(GET_PRODUCT_QUANTITY_MESSAGE);
 		
 		int minInput = 1;
@@ -222,38 +234,60 @@ public class ApplicationView {
 
 	
 	private void removeProduct() {
-		//TODO ask if the user is sure to delete given product (and show the item they have selected)
 		table.printTable();
 		printInConsole(REMOVE_PRODUCT_MENU);
 		
 		int minInput = 0;
 		int maxInput = Integer.MAX_VALUE;
 		
-		int productIndex = getIntInput(minInput, maxInput, INCORRECT_INPUT_ERROR_MESSAGE);
+		int productTableIndex = getIntInput(minInput, maxInput, INCORRECT_INPUT_ERROR_MESSAGE);
 		
-		
-		if(productIndex == 0) {
+		if(productTableIndex == 0) {
 			return;
 		}
 		
-		if(controller.removeFood(productIndex - 1)) {
-			printInConsole(REMOVE_PRODUCT_CONFIRMATION_MESSAGE);
-		}
-		else {
+		int productIndex = productTableIndex - 1;
+		
+		if(!controller.checkIfFoodExists(productIndex)) {
 			printInConsole(REMOVE_PRODUCT_ERROR_MESSAGE);
 		}
 		
-		goBackToMenu();
+		String message = REMOVE_PRODUCT_MESSAGE + "\n" 
+		+"[#"+productTableIndex +" "+controller.getFood(productIndex)+"]";
 		
+		if(choiceConfirmation(message)) {
+			controller.removeFood(productIndex);
+			clearConsole();
+			printInConsole(REMOVE_PRODUCT_CONFIRMATION_MESSAGE);
+		}
+
 	}
 
 	private void removeAll() {
-		//TODO ask if the user is sure to delete all products
-		controller.removeAll();
-		printInConsole(REMOVE_ALL_PRODUCTS_CONFIRMATION_MESSAGE);
-		goBackToMenu();
+		if(choiceConfirmation(REMOVE_ALL_PRODUCTS_MESSAGE)) {
+			controller.removeAll();
+			clearConsole();
+			printInConsole(REMOVE_ALL_PRODUCTS_CONFIRMATION_MESSAGE);
+			goBackToMenu();
+		}
 	}
 	
+	private boolean choiceConfirmation(String message) {
+		clearConsole();
+		printInConsole(message + "\n");
+		printInConsole("Press [1] to confirm");
+		printInConsole("Press [2] to cancel");
+		
+		if(getIntInput(1, 2, "please pres 1 or 2") == 1) {
+			clearConsole();
+			return true;
+		}
+		else {
+			return false;
+		}
+		
+		
+	}
 	
 	private void printProducts() {
 		table.printTable();
@@ -276,10 +310,13 @@ public class ApplicationView {
 		System.out.print(whiteSpace.repeat(30));
 	}
 	
+	private String getStringInput() {
+		String input = "";
+		input = scanner.next();
+		return input;
+	}
 	
 	private int getIntInput(int minIntInput, int maxIntInput, String errorMessage) {
-		//TODO check why scanner cannot be closed without issues
-		Scanner scanner = new Scanner(System.in);
 		int input = 0;
 
 		while (true) {
@@ -297,18 +334,6 @@ public class ApplicationView {
 			}
 		}
 	}
-	
-	private String getStringInput() {
-		//TODO check why scanner cannot be closed without issues
-		Scanner scanner = new Scanner(System.in);
-		String input = "";
-		
-		input = scanner.next();
-		
-		return input;
-	}
-	
-	
 	
 	
 }

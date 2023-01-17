@@ -36,7 +36,7 @@ class ControllerTest {
 	void testRemoveOperationWhenEmpty() {
 
 		Controller controller = new Controller(new DummyDataStoring());
-
-		assertEquals(controller.removeFood(999), false);
+		//TODO change
+		assertEquals(true, false);
 	}
 }

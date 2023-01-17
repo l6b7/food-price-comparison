@@ -9,32 +9,7 @@ import Model.DummyDataStoring;
 public class ConsoleTable implements ITable{
 	
 	private IController controller;
-	
 
-
-	public static void main(String[] args) {
-		
-		ConsoleTable c = new ConsoleTable(new Controller(new DummyDataStoring()));
-		
-		c.controller.addFood("BBB", "brand", 1000);
-		c.controller.addFood("AAA", "brandbrand", 2000);
-		c.controller.addFood("FFF", "brand", 3000);
-		c.controller.addFood("KKK", "brand", 4000000);
-		c.controller.addFood("AAA", "brand", 5000);
-		c.controller.addFood("ZZZZZZZZZ", "brand", 6000);
-		c.controller.addFood("AAA", "brandbrand", 2000);
-		c.controller.addFood("FFF", "brand", 3000);
-		c.controller.addFood("KKK", "brand", 4000000);
-		c.controller.addFood("AAA", "brand", 5000);
-		c.controller.addFood("ZZZZZZZZZ", "brand", 6000);
-
-		
-		c.printTable();
-	}
-	
-	
-	
-	
 	public ConsoleTable(IController controller) {
 		this.controller = controller;
 	}

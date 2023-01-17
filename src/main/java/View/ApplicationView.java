@@ -12,7 +12,7 @@ public class ApplicationView {
 	private ITable table;
 	
 	
-	private final String MENU =	new String(""
+	private final String MENU = new String(""
 					+ "Press [1] to view products" +"\n"
 					+ "Press [2] to add a products" +"\n"
 					+ "Press [3] to remove a product" +"\n"
@@ -25,6 +25,7 @@ public class ApplicationView {
 	
 	
 	private final String GO_BACK_MESSAGE = "Press [0] to go back";
+	
 	private final String GO_BACK_ERROR_MESSAGE =MENU + "\n" + "Please press [0] to go back";
 	
 	
@@ -32,7 +33,7 @@ public class ApplicationView {
 					+ "Press [1] to add a product" +"\n"
 					+ "Press [2] to add a product with mass" +"\n"
 					+ "Press [3] to add a product with quanity" +"\n"
-					+ "Press [0] to go back" +"\n"
+					+ "Press [0] to go back"
 					);
 	
 	private final String ADD_PRODUCT_CONFIRMATION_MESSAGE = "Product has been added";
@@ -40,8 +41,8 @@ public class ApplicationView {
 	private final String REMOVE_ALL_PRODUCTS_CONFIRMATION_MESSAGE = "All products have been removed";
 
 	private final String REMOVE_PRODUCT_MENU = ""
-											+"Enter product # number to remove it" + "\n"
-											+"Press [0] to go back";
+							+"Enter product # number to remove it" + "\n"
+							+"Press [0] to go back";
 	
 	private final String REMOVE_PRODUCT_ERROR_MESSAGE = "Product wasn't found";
 	private final String REMOVE_PRODUCT_CONFIRMATION_MESSAGE = "Product has been removed";
@@ -50,14 +51,17 @@ public class ApplicationView {
 	private final String GET_PRODUCT_BRAND_MESSAGE = "Enter brand of the product";
 	
 	private final String GET_PRODUCT_PRICE_MESSAGE = "" 
-													+ "Enter price of the product" 
-													+ "\n" 
-													+ "input example 1000 -> 10.00";
+							+ "Enter price of the product" 
+							+ "\n" 
+							+ "input example 1000 -> 10.00";
 	
 	private final String GET_PRODUCT_MASS_MESSAGE = "Enter mass of the product";
-	private final String GET_PRODUCT_MEASUREMENT_UNIT_MESSAGE = "Is the mass entered in milliliters or grams"
-																+ "1 -> grams"
-																+ "2 -> milliliters";
+	
+	private final String GET_PRODUCT_MEASUREMENT_UNIT_MESSAGE = ""
+					+"Is the mass entered in milliliters or grams" + "\n"
+					+ "1 -> grams" +"\n"
+					+ "2 -> milliliters";
+	
 	private final String GET_PRODUCT_QUANTITY_MESSAGE = "Enter quantity of the product";
 	
 	
@@ -74,7 +78,7 @@ public class ApplicationView {
 		table = new ConsoleTable(controller);
 	}
 
-	private void startApplication(){
+		private void startApplication(){
 		boolean isRunning = true;
 		boolean firstRun = true;
 		int userInput;

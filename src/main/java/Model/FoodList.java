@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class FoodList implements IFoodList{
 	
-	
+	//TODO create unit tests from main
 	public static void main(String[] args) {
 		FoodList f = new FoodList(new DummyDataStoring());
 		f.addFood("name", "name", 2312);

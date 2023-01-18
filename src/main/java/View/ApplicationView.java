@@ -26,9 +26,6 @@ public class ApplicationView {
 	
 	private final String GO_BACK_MESSAGE = "Press [0] to go back";
 	
-	private final String GO_BACK_ERROR_MESSAGE =MENU + "\n" + "Please press [0] to go back";
-	
-	
 	private final String ADD_PRODUCT_MENU = new String(""
 					+ "Press [1] to add a product" +"\n"
 					+ "Press [2] to add a product with mass" +"\n"
@@ -184,8 +181,8 @@ public class ApplicationView {
 	
 
 	private int getProductMass() {
-		printInConsole(GET_PRODUCT_MASS_MESSAGE);
 		clearConsole();
+		printInConsole(GET_PRODUCT_MASS_MESSAGE);
 		
 		int minInput = 1;
 		int maxInput = Integer.MAX_VALUE;
@@ -296,7 +293,7 @@ public class ApplicationView {
 	
 	private void goBackToMenu(){
 		printInConsole(GO_BACK_MESSAGE);
-		getIntInput(0, 0, GO_BACK_ERROR_MESSAGE);
+		getIntInput(0, 0, GO_BACK_MESSAGE);
 	}
 
 
@@ -312,13 +309,15 @@ public class ApplicationView {
 	
 	private String getStringInput() {
 		String input = "";
+		
 		input = scanner.next();
+		input += " " + scanner.nextLine();
+		
 		return input;
 	}
 	
 	private int getIntInput(int minIntInput, int maxIntInput, String errorMessage) {
 		int input = 0;
-
 		while (true) {
 			try {
 				input = Integer.parseInt(scanner.next());

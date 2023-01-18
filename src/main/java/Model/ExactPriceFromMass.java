@@ -23,7 +23,7 @@ public class ExactPriceFromMass implements IExactPrice  {
 		return  IFood.formatPrice(getAdjustedPrice(price))+ perAmountValue + measurementUnit;
 	}
 	
-	public int getAdjustedPrice(int price) {
+	private int getAdjustedPrice(int price) {
 		return (int) (((double)price) / mass * 100);
 	}
 

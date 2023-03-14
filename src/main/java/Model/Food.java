@@ -5,14 +5,14 @@ public class Food implements IFood{
 	private String name;
 	private String brand;
 	private int price;
-	private IExactPrice amount;
+	private String exactPrice;
 	
 
-	public Food(String name, String brand, int price, IExactPrice amount) {
+	public Food(String name, String brand, int price, String exactPrice) {
 		this.name = name;
 		this.brand = brand;
 		this.price = price;
-		this.amount = amount;
+		this.exactPrice = exactPrice;
 	}
 
 	public String getName() {
@@ -24,16 +24,16 @@ public class Food implements IFood{
 	}
 
 	public String getPrice() {
-		return String.format("%.2f",((double) price / 100 ));
+		return IFood.formatPrice(price);
 	}
 
 	public String getExactPrice() {
-		return amount.getExactPrice(price);
+		return exactPrice;
 	}
 
 	@Override
 	public String toString() {
-	return getName() + " "+ getBrand() + " " + getPrice()+"...";
+	return getName() + " " + getBrand() + " " + getPrice()+ " " + getExactPrice();
 	}
 
 }

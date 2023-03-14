@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import Controller.Controller;
 import Controller.IController;
-import Model.DummyDataStoring;
+import Model.DataStoringWithGson;
 
 public class ApplicationView {
 
@@ -67,7 +67,7 @@ public class ApplicationView {
 	
 	public static void main(String[] args) {
 		
-		ApplicationView view = new ApplicationView(new Controller(new DummyDataStoring()));
+		ApplicationView view = new ApplicationView(new Controller(new DataStoringWithGson()));
 		
 		view.startApplication();
 	}

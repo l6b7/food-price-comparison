@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: ControllerTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in ControllerTest
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in ControllerTest
+testRemoveOperationWhenEmpty  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at ControllerTest.testRemoveOperationWhenEmpty(ControllerTest.java:40)
+
+testControllerTableArrayFirstElement  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <AAA>
+	at ControllerTest.testControllerTableArrayFirstElement(ControllerTest.java:23)
+

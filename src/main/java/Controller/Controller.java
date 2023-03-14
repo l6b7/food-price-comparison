@@ -2,6 +2,9 @@ package Controller;
 
 import Model.FoodList;
 import Model.IDataStoring;
+import Model.IExactPriceFromMass;
+import Model.IExactPriceFromQuantity;
+import Model.IFood;
 import Model.IFoodList;
 
 public class Controller implements IController{
@@ -52,19 +55,19 @@ public class Controller implements IController{
 
 	@Override
 	public void addFood(String name, String brand, int price) {
-		foodList.addFood(name, brand, price);
+		foodList.addFood(name, brand, price, IFood.formatPrice(price));
 		
 	}
 	
 	@Override
 	public void addFoodWithQuantity(String name, String brand, int price, int quantity) {
-		foodList.addFoodWithQuantity(name, brand, price, quantity);
+		foodList.addFood(name, brand, price, IExactPriceFromQuantity.getExactPrice(price, quantity));
 		
 	}
 	
 	@Override
 	public void addFoodWithMass(String name, String brand, int price, int mass, String measurementUnit) {
-		foodList.addFoodWithMass(name, brand, price, mass, measurementUnit);
+		foodList.addFood(name, brand, price, IExactPriceFromMass.getExactPrice(price, mass, measurementUnit));
 		
 	}
 
@@ -81,11 +84,11 @@ public class Controller implements IController{
 		
 	}
 	
+
 	@Override
 	public String getFood(int index) {
 		return foodList.getFood(index);
 	}
-
 
 
 	@Override

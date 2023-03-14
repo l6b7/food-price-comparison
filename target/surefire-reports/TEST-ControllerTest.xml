@@ -1,63 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ControllerTest" time="0.018" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ControllerTest" time="0.003" tests="3" errors="0" skipped="0" failures="2">
   <properties>
-    <property name="java.specification.version" value="18"/>
-    <property name="sun.cpu.isalist" value="amd64"/>
-    <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\_[Folder]\Professional\Workspace\food-price-comparison\target\test-classes;C:\_[Folder]\Professional\Workspace\food-price-comparison\target\classes;C:\Users\quba2\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.0\junit-jupiter-engine-5.4.0.jar;C:\Users\quba2\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\quba2\.m2\repository\org\junit\platform\junit-platform-engine\1.4.0\junit-platform-engine-1.4.0.jar;C:\Users\quba2\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\quba2\.m2\repository\org\junit\platform\junit-platform-commons\1.4.0\junit-platform-commons-1.4.0.jar;C:\Users\quba2\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.0\junit-jupiter-api-5.4.0.jar;"/>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/l6b7/Workspace/food-price-comparison/target/test-classes:/home/l6b7/Workspace/food-price-comparison/target/classes:/home/l6b7/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.4.0/junit-jupiter-engine-5.4.0.jar:/home/l6b7/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/home/l6b7/.m2/repository/org/junit/platform/junit-platform-engine/1.4.0/junit-platform-engine-1.4.0.jar:/home/l6b7/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/home/l6b7/.m2/repository/org/junit/platform/junit-platform-commons/1.4.0/junit-platform-commons-1.4.0.jar:/home/l6b7/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.4.0/junit-jupiter-api-5.4.0.jar:"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://adoptium.net/"/>
-    <property name="user.timezone" value="Europe/Paris"/>
-    <property name="os.name" value="Windows 10"/>
-    <property name="java.vm.specification.version" value="18"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="user.country" value="GB"/>
-    <property name="sun.boot.library.path" value="C:\Users\quba2\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_18.0.1.v20220515-1614\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\quba2\AppData\Local\Temp\surefire8042213536132306511\surefirebooter11763737282733193387.jar C:\Users\quba2\AppData\Local\Temp\surefire8042213536132306511 2023-01-13T13-17-49_939-jvmRun1 surefire17320390479997612123tmp surefire_0995008325498703121tmp"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/app/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.5.v20221102-0933/jre/lib"/>
+    <property name="sun.java.command" value="/home/l6b7/Workspace/food-price-comparison/target/surefire/surefirebooter17325701923130338935.jar /home/l6b7/Workspace/food-price-comparison/target/surefire 2023-03-08T11-00-04_499-jvmRun1 surefire18159419113122963359tmp surefire_015993872287118387705tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\_[Folder]\Professional\Workspace\food-price-comparison\target\test-classes;C:\_[Folder]\Professional\Workspace\food-price-comparison\target\classes;C:\Users\quba2\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.0\junit-jupiter-engine-5.4.0.jar;C:\Users\quba2\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\quba2\.m2\repository\org\junit\platform\junit-platform-engine\1.4.0\junit-platform-engine-1.4.0.jar;C:\Users\quba2\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\quba2\.m2\repository\org\junit\platform\junit-platform-commons\1.4.0\junit-platform-commons-1.4.0.jar;C:\Users\quba2\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.0\junit-jupiter-api-5.4.0.jar;"/>
+    <property name="surefire.test.class.path" value="/home/l6b7/Workspace/food-price-comparison/target/test-classes:/home/l6b7/Workspace/food-price-comparison/target/classes:/home/l6b7/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.4.0/junit-jupiter-engine-5.4.0.jar:/home/l6b7/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/home/l6b7/.m2/repository/org/junit/platform/junit-platform-engine/1.4.0/junit-platform-engine-1.4.0.jar:/home/l6b7/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/home/l6b7/.m2/repository/org/junit/platform/junit-platform-commons/1.4.0/junit-platform-commons-1.4.0.jar:/home/l6b7/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.4.0/junit-jupiter-api-5.4.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="C:\Users\quba2"/>
+    <property name="user.home" value="/home/l6b7"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2022-04-19"/>
-    <property name="java.home" value="C:\Users\quba2\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_18.0.1.v20220515-1614\jre"/>
-    <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\_[Folder]\Professional\Workspace\food-price-comparison"/>
+    <property name="java.version.date" value="2022-10-18"/>
+    <property name="java.home" value="/app/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.5.v20221102-0933/jre"/>
+    <property name="file.separator" value="/"/>
+    <property name="style.color" value="always"/>
+    <property name="basedir" value="/home/l6b7/Workspace/food-price-comparison"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\quba2\AppData\Local\Temp\surefire8042213536132306511\surefirebooter11763737282733193387.jar"/>
-    <property name="user.script" value=""/>
+    <property name="surefire.real.class.path" value="/home/l6b7/Workspace/food-price-comparison/target/surefire/surefirebooter17325701923130338935.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="18.0.1+10"/>
-    <property name="user.name" value="quba2"/>
-    <property name="path.separator" value=";"/>
-    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.version" value="17.0.5+8"/>
+    <property name="user.name" value="l6b7"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.19.0-35-generic"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="java.vendor.version" value="Temurin-18.0.1+10"/>
-    <property name="localRepository" value="C:\Users\quba2\.m2\repository"/>
+    <property name="java.vendor.version" value="Temurin-17.0.5+8"/>
+    <property name="localRepository" value="/home/l6b7/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
-    <property name="java.io.tmpdir" value="C:\Users\quba2\AppData\Local\Temp\"/>
-    <property name="java.version" value="18.0.1"/>
-    <property name="user.dir" value="C:\_[Folder]\Professional\Workspace\food-price-comparison"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.5"/>
+    <property name="user.dir" value="/home/l6b7/Workspace/food-price-comparison"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="sun.os.patch.level" value=""/>
-    <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Users\quba2\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_18.0.1.v20220515-1614\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/quba2/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_18.0.1.v20220515-1614/jre/bin/server;C:/Users/quba2/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_18.0.1.v20220515-1614/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Users\quba2\AppData\Local\Microsoft\WindowsApps;C:\_[Folder]\Software\eclipse;;."/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value=":/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.vendor" value="Eclipse Adoptium"/>
-    <property name="java.vm.version" value="18.0.1+10"/>
+    <property name="java.vm.version" value="17.0.5+8"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="java.class.version" value="62.0"/>
+    <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testRemoveOperationWhenEmpty" classname="ControllerTest" time="0.01"/>
-  <testcase name="testIfIsEmpty" classname="ControllerTest" time="0"/>
-  <testcase name="testControllerTableArrayFirstElement" classname="ControllerTest" time="0.004"/>
+  <testcase name="testRemoveOperationWhenEmpty" classname="ControllerTest" time="0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at ControllerTest.testRemoveOperationWhenEmpty(ControllerTest.java:40)
+]]></failure>
+  </testcase>
+  <testcase name="testIfIsEmpty" classname="ControllerTest" time="0.001"/>
+  <testcase name="testControllerTableArrayFirstElement" classname="ControllerTest" time="0">
+    <failure message="expected: &lt;1&gt; but was: &lt;AAA&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1> but was: <AAA>
+	at ControllerTest.testControllerTableArrayFirstElement(ControllerTest.java:23)
+]]></failure>
+  </testcase>
 </testsuite>

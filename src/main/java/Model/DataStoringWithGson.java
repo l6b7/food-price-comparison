@@ -37,6 +37,7 @@ public class DataStoringWithGson implements IDataStoring {
 		try (Writer writer = new FileWriter("Output.json")) {
 			Gson gson = new GsonBuilder().setPrettyPrinting().create();
 			gson.toJson(foodList, writer);
+			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -6,15 +6,15 @@
     "exactPrice": "6.17/100g"
   },
   {
-    "name": "Water 6 pack",
-    "brand": "Evian",
-    "price": 1234,
-    "exactPrice": "3.08 per unit"
-  },
-  {
     "name": "Product",
     "brand": "Brand",
     "price": 1234,
     "exactPrice": "12.34"
+  },
+  {
+    "name": "Water 6 pack",
+    "brand": "Evian",
+    "price": 1234,
+    "exactPrice": "3.08 per unit"
   }
 ]
